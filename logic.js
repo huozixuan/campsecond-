@@ -570,6 +570,4 @@
     document.getElementById("mask").onclick = closeAllModal;
     // 页面初始化加载数据
     window.onload = initData;
-</script>
-</body>
-</html>
+
