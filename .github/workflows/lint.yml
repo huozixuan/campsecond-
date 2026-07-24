@@ -1,0 +1,29 @@
+name: JS代码自动化检测
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-check:
+    runs-on: ubuntu-latest
+    steps:
+      # 1.拉取仓库全部代码
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      # 2.安装Node.js环境（运行ESLint必备）
+      - name: 配置Node环境
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3.初始化依赖，安装代码检测工具eslint
+      - name: 安装ESLint
+        run: npm init -y && npm install eslint --save-dev
+
+      # 4.执行JS文件语法/格式检测
+      - name: 执行代码自动化校验
+        run: npx eslint *.js
