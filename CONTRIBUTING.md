@@ -36,3 +36,4 @@
 - feat: 新增商品搜索过滤逻辑
 - fix: 修复负数价格可发布商品bug
 - docs: 更新CONTRIBUTING协作规范文档
+
